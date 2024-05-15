@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  database:
+    image: postgres:14.2-alpine
+    container_name: database-postgres
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    env_file: .env
+
+  backend-app:
+    container_name: backend-app
+    build: .
+    command: "bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - "./:/rails"
+    ports:
+      - "3000:3000"
+    env_file: .env
+    tty: true
+    stdin_open: true
+    depends_on:
+      - database
+
+volumes:
+  postgres_data: {}
