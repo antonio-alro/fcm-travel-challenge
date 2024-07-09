@@ -12,11 +12,11 @@ default: &default
 
 development:
   <<: *default
-  database: backend_api_template_development
+  database: fcm_travel_development
 
 test:
   <<: *default
-  database: backend_api_template_test
+  database: fcm_travel_test
 
 production:
   <<: *default

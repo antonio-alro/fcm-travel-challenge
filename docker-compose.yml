@@ -3,7 +3,7 @@ version: "3.8"
 services:
   database:
     image: postgres:14.2-alpine
-    container_name: database-postgres
+    container_name: fcm-travel-database-postgres
     restart: always
     volumes:
       - postgres_data:/var/lib/postgresql/data
@@ -12,7 +12,7 @@ services:
     env_file: .env
 
   backend-app:
-    container_name: backend-app
+    container_name: fcm-travel-backend-app
     build: .
     command: "bundle exec rails s -p 3000 -b '0.0.0.0'"
     volumes:
