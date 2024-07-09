@@ -19,8 +19,6 @@ module Segments
         destination_city = calculate_destination_city_service.call(base_city: base_city, segments: segments_in_trip)
         start_date = calculate_start_date_service.call(segments: segments_in_trip)
 
-        puts "----- DESTINATION CITY: #{destination_city}, START_DATE: #{start_date}"
-
         trip_entity.new(destination_city:, start_date: start_date, segments: segments_in_trip)
       end
     end
