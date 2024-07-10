@@ -17,11 +17,11 @@ module InputParser
       segments = []
 
       file_manager.readlines(filepath).each do |line|
-        segment_data = extract_segment_data_service.new(input_line: line).call
+        segment = extract_segment_data_service.new(input_line: line).call
 
-        next if segment_data.blank?
+        next if segment.blank?
 
-        segments << segment_data
+        segments << segment
       end
 
       segments

@@ -19,7 +19,7 @@ module Segments
         destination_city = calculate_destination_city_service.call(base_city: base_city, segments: segments_in_trip)
         start_date = calculate_start_date_service.call(segments: segments_in_trip)
 
-        trip_entity.new(destination_city:, start_date: start_date, segments: segments_in_trip)
+        trip_entity.new(destination_city: destination_city, start_date: start_date, segments: segments_in_trip)
       end
     end
 
@@ -28,7 +28,7 @@ module Segments
     attr_reader :base_city, :ordered_segments
 
     def segments_grouped_by_trip
-      @segments_grouped_by_trip ||= ordered_segments.chunk_while { |i, j| i[:destination_city] != base_city }.to_a
+      @segments_grouped_by_trip ||= ordered_segments.chunk_while { |segment_i, segment_j| segment_i.destination_city != base_city }.to_a
     end
   end
 end

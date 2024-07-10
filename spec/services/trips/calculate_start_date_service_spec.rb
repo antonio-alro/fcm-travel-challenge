@@ -7,8 +7,8 @@ RSpec.describe Trips::CalculateStartDateService, type: :service do
 
   describe '#call' do
     it 'returns the expected start date' do
-      segment_1 = { kind: 'flight', starts_at: DateTime.parse('2023-03-02 06:40') }
-      segment_2 = { kind: 'flight', starts_at: DateTime.parse('2023-03-03 12:30') }
+      segment_1 = OpenStruct.new(kind: 'flight', starts_at: DateTime.parse('2023-03-02 06:40'))
+      segment_2 = OpenStruct.new(kind: 'flight', starts_at: DateTime.parse('2023-03-03 12:30'))
 
       result = service.call(segments: [segment_1, segment_2])
 

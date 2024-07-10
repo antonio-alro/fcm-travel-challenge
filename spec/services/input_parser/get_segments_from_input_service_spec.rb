@@ -5,29 +5,21 @@ require 'rails_helper'
 RSpec.describe InputParser::GetSegmentsFromInputService, type: :service do
   subject(:service) { described_class.new(input_line: input_line) }
 
-  # context 'without an input_line' do
-  #   let(:input_line) { nil }
-
-  #   it 'returns nothing' do
-  #     expect(subject.call).to be_nil
-  #   end
-  # end
-
   describe '#call' do
     it 'returns the segments ordered by date' do
       input_line = ['SEGMENT: Flight SVQ 2023-03-02 06:40 -> BCN 09:10']
-      segment_data = {
+      segment = SegmentEntity.new(
         kind: 'flight',
         origin_city: 'SVQ',
         destination_city: 'BCN',
         starts_at: DateTime.parse('2023-03-02 06:40'),
         ends_at: DateTime.parse('2023-03-02 09:10')
-      }
+      )
       service = described_class.new(
         filename: 'input.txt',
         folderpath: Rails.root.join('lib', 'files'),
         file_manager: self.class::FakeFileManager.with_lines([input_line]),
-        extract_segment_data_service: self.class::FakeExtractSegmentDataService.with_segment_data(segment_data)
+        extract_segment_data_service: self.class::FakeExtractSegmentDataService.with_segment(segment)
       )
       filepath = service.folderpath.join('input.txt')
 
@@ -36,7 +28,7 @@ RSpec.describe InputParser::GetSegmentsFromInputService, type: :service do
 
       result = service.call
 
-      expect(result).to eq([segment_data])
+      expect(result).to eq([segment])
     end
   end
 
@@ -54,10 +46,10 @@ RSpec.describe InputParser::GetSegmentsFromInputService, type: :service do
   end
 
   class self::FakeExtractSegmentDataService
-    attr_reader :segment_data
+    attr_reader :segment
 
-    def self.with_segment_data(segment_data)
-      @@segment_data = segment_data
+    def self.with_segment(segment)
+      @@segment = segment
       self
     end
 
@@ -66,7 +58,7 @@ RSpec.describe InputParser::GetSegmentsFromInputService, type: :service do
     end
 
     def call(*)
-      @@segment_data
+      @@segment
     end
   end
 end

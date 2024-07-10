@@ -9,7 +9,7 @@ module Trips
     private
 
     def self.involved_cities_in_segment(segment:)
-      segment.slice(:origin_city, :destination_city).values
+      [segment.origin_city, segment.destination_city]
     end
   end
 end
