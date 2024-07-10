@@ -1,17 +1,7 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
 RSpec.describe Segments::GroupSegmentsPerTripService, type: :service do
   let(:base_city) { 'SVQ' }
-
-  let(:ordered_segments) do
-    [
-      SegmentEntity.new(kind: 'hotel', origin_city: 'BCN', destination_city: 'BCN', starts_at: Date.parse('2023-01-05').end_of_day, ends_at: Date.parse('2023-01-10').beginning_of_day)
-    ]
-
-  end
-
 
   describe '#call' do
     it 'returns the segments grouped per trip' do
