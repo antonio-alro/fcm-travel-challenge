@@ -30,4 +30,44 @@ RSpec.describe SegmentEntity, type: :entity do
   describe '.TRANSPORT_KINDS' do
     specify { expect(described_class::TRANSPORT_KINDS).to eq({ 'flight' => 'Flight', 'train' => 'Train' }) }
   end
+
+  describe '#is_accommodation?' do
+    context 'when the segment is a hotel' do
+      let(:kind) { 'hotel' }
+
+      specify { expect(domain_entity.is_accommodation?).to eq(true) }
+    end
+
+    context 'when the segment is a flight' do
+      let(:kind) { 'flight' }
+
+      specify { expect(domain_entity.is_accommodation?).to eq(false) }
+    end
+
+    context 'when the segment is a train' do
+      let(:kind) { 'train' }
+
+      specify { expect(domain_entity.is_accommodation?).to eq(false) }
+    end
+  end
+
+  describe '#kind_text' do
+    context 'when the segment is a hotel' do
+      let(:kind) { 'hotel' }
+
+      specify { expect(domain_entity.kind_text).to eq('Hotel') }
+    end
+
+    context 'when the segment is a flight' do
+      let(:kind) { 'flight' }
+
+      specify { expect(domain_entity.kind_text).to eq('Flight') }
+    end
+
+    context 'when the segment is a train' do
+      let(:kind) { 'train' }
+
+      specify { expect(domain_entity.kind_text).to eq('Train') }
+    end
+  end
 end

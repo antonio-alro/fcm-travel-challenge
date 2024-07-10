@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe SegmentSerializer, type: :serializer do
-  subject(:serializer) { described_class.new(segment, accomodation_kinds: ['hotel']) }
+  subject(:serializer) { described_class.new(segment) }
 
   describe '#serializable_message' do
     context 'when the segment is an accommodation' do

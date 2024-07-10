@@ -11,4 +11,14 @@ class SegmentEntity
     @starts_at = starts_at
     @ends_at = ends_at
   end
+
+  def is_accommodation?
+    ACCOMMODATION_KINDS.key?(kind)
+  end
+
+  def kind_text
+    return ACCOMMODATION_KINDS[kind] if is_accommodation?
+
+    TRANSPORT_KINDS[kind]
+  end
 end
