@@ -15,7 +15,7 @@ module InputParser
 
       if input_line.match?(ACCOMMODATION_REGEXP)
         captures = input_line.match(ACCOMMODATION_REGEXP).captures
-        segment_factory.initialize_segment_for_accomodation(captures)
+        segment_factory.initialize_segment_for_accommodation(captures)
       elsif input_line.match?(TRIP_REGEXP)
         captures = input_line.match(TRIP_REGEXP).captures
         segment_factory.initialize_segment_for_transport(captures)

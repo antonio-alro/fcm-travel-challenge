@@ -1,13 +1,13 @@
 class SegmentSerializer < BaseSerializer
   def serializable_message
-    return accomodation_message if object.is_accommodation?
+    return accommodation_message if object.is_accommodation?
 
     transport_message
   end
 
   private
 
-  def accomodation_message
+  def accommodation_message
     I18n.t(
       "segments.labels.accommodation",
       kind: object.kind_text,

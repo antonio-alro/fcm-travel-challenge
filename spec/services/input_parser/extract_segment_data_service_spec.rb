@@ -89,7 +89,7 @@ RSpec.describe InputParser::ExtractSegmentDataService, type: :service do
       self
     end
 
-    def self.initialize_segment_for_accomodation(*)
+    def self.initialize_segment_for_accommodation(*)
       @@segment
     end
 

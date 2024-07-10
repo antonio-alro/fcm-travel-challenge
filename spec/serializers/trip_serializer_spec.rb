@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe TripSerializer, type: :serializer do
-  subject(:serializer) { described_class.new(segment, accomodation_kinds: ['hotel']) }
-
   describe '#serializable_message' do
     it 'returns the expected text' do
       segment = SegmentEntity.new(

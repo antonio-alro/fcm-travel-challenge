@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.describe DomainFactories::SegmentFactory, type: :entity do
   subject(:domain_factory) { described_class }
 
-  describe '#initialize_segment_for_accomodation' do
-    let(:accomodation_captures) { ['Hotel', 'BCN', '2023-01-05', '2023-01-10'] }
+  describe '#initialize_segment_for_accommodation' do
+    let(:accommodation_captures) { ['Hotel', 'BCN', '2023-01-05', '2023-01-10'] }
 
     it 'returns a segment domain entity' do
-      expect(domain_factory.initialize_segment_for_accomodation(accomodation_captures)).to be_a(SegmentEntity)
+      expect(domain_factory.initialize_segment_for_accommodation(accommodation_captures)).to be_a(SegmentEntity)
     end
 
     it 'initializes the entity with the expected data' do
@@ -21,7 +21,7 @@ RSpec.describe DomainFactories::SegmentFactory, type: :entity do
         )
         .and_call_original
 
-      domain_factory.initialize_segment_for_accomodation(accomodation_captures)
+      domain_factory.initialize_segment_for_accommodation(accommodation_captures)
     end
   end
 
