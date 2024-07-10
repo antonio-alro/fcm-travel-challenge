@@ -1,6 +1,6 @@
 module DomainFactories
   class SegmentFactory
-    def self.initialize_segment_for_accomodation(accommodation_captures, domain_entity_klass: SegmentEntity)
+    def self.initialize_segment_for_accommodation(accommodation_captures, domain_entity_klass: SegmentEntity)
       domain_entity_klass.new(
         kind: domain_entity_klass::ACCOMMODATION_KINDS.invert[accommodation_captures[0]],
         origin_city: accommodation_captures[1],

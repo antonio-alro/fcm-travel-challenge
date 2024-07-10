@@ -1,0 +1,5 @@
+en:
+  segments:
+    labels:
+      accommodation: "%{kind} at %{destination} on %{beginning_date} to %{end_date}"
+      transport: "%{kind} from %{origin} to %{destination} at %{beginning_date} to %{end_date}"
