@@ -4,7 +4,7 @@ RSpec.describe InputParser::GetSegmentsFromInputService, type: :service do
   describe '#call' do
     context 'when the file does not exist' do
       it 'raises an error' do
-         service = described_class.new(
+        service = described_class.new(
           filename: 'input.txt',
           file_manager: self.class::FakeNotFoundFileManager
         )
