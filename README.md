@@ -9,8 +9,8 @@
   * [Serializers](#serializers)
   * [Transformers](#transformers)
   * [Tests](#tests)
-- [Potential improvements](#improvements)
-- [Getting started](#getting-started)
+- [Potential improvements](#potential-improvements)
+- [Project: Getting started](#project-getting-started)
   * [Technologies](#technologies)
   * [How to build the project](#how-to-build-the-project)
   * [How to run the script](#how-to-run-the-script)
@@ -35,7 +35,7 @@ These are the main decisions that were made during the implementation:
   To get the segments from the input file, we use some Regular expressions (REGEX). This allows to extract the data in a structured way and compound our domain entities to start working with them.
 
 - Logic to sort the segments:
-  Reading the segments, we have set a consistent beginning date for every segment in order to achieve an ordering that makes sense. For instance, when the segment is an "Hotel", we set the beginning timestamp to end of day because we think if, there is another segment of transport (Flight, Train, ...), this one will happen before than "Hotel" segment in the same day.
+  Reading the segments, we have set a consistent beginning date for every segment in order to achieve an ordering that makes sense. For instance, when the segment is an `Hotel`, we set the beginning timestamp to end of day because we think if, there is another segment of transport (`Flight`, `Train`, ...), this one will happen before than the `Hotel` segment in the same day.
   Therefore, we use this `beginning date` to sort the segments in chronological order.
 
 - Logic to group the segments:
@@ -125,9 +125,11 @@ In addition, leveraging the use of dependency injection, we can inject fake clas
 In this section, we can find some improvements for our solution:
 
 - Data persistence:
+
   Assuming that we might receive the input text via webhook or having a periodical process that pulls the data, we might persist the information in a database.
 
   For example, we might have the following data model:
+
   #TODO: PUT AN IMAGE SHOWING THE DATA MOTEL
 
   Once we have the information in a database, we might query the itinerary for a certain user and return it somehow, for example, exposing it in an API endpoint.
