@@ -6,6 +6,8 @@
   * [Domain entities](#domain-entities)
   * [Services](#services)
   * [Use cases](#use-cases)
+  * [Inputs](#inputs)
+  * [Errors](#errors)
   * [Serializers](#serializers)
   * [Transformers](#transformers)
   * [Tests](#tests)
@@ -98,6 +100,14 @@ We have the following services:
 In this solution, we can understand an use case like a services orchestrator.
 We have the following use cases:
 - `GetItineraryUseCase`: It takes care of calling the different services that we need to complete the use case.
+
+### Inputs
+The inputs contains the parameters that use cases need:
+- `GetItineraryInput`: It contains the base place and the filename where we find the reservations of our user.
+
+### Errors
+We implement our custom errors, based on the `StandardError` class:
+- `FileNotFoundError`: It is raised if the input file does not exist.
 
 ### Serializers
 Our serializers take care of, given a domain entity, return the response in the appropiate format, based on the challenge requirements.
