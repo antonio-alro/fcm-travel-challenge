@@ -81,7 +81,6 @@ Therefore, we have the following layers in our application:
     <img alt="Code architecture" width="971px" src="./docs/code-architecture.png" />
   </p>
 
-
 Having said that, we have different types of code pieces:
 
 ### Domain entities
