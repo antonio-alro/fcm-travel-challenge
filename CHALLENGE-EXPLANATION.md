@@ -1,4 +1,5 @@
 # FCM Digital - Ruby Technical challenge
+
 ---
 
 As we want to provide a better experience for our users we want to represent their itinerary in the most comprehensive way possible.
@@ -62,3 +63,9 @@ You can reply to the email you received if you have any doubt.
 In order to submit your solution, create your own Github repository and send us by email when it is ready.
 
 Thank you very much for your time and good luck!
+
+---
+
+Provided by FCM Digital:
+
+https://github.com/fcm-digital/ruby_technical_challenge
