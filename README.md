@@ -120,6 +120,7 @@ The inputs contains the parameters that use cases need:
 
 ### Errors
 We implement our custom errors, based on the `StandardError` class:
+- `InvalidInputError`: It is raised if some of the required arguments in the input is missing.
 - `FileNotFoundError`: It is raised if the input file does not exist.
 
 ### Serializers
