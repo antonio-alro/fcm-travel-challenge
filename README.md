@@ -77,7 +77,9 @@ Therefore, we have the following layers in our application:
   - Entities
   - Services
 
-  #TODO: PUT AN IMAGE SHOWING THE ARCHITECTURE
+  <p align="center">
+    <img alt="Code architecture" width="971px" src="./docs/code-architecture.png" />
+  </p>
 
 
 Having said that, we have different types of code pieces:
