@@ -10,6 +10,8 @@ class GetItineraryUseCase
   end
 
   def perform(input:)
+    raise input.invalid_input_error if input.invalid?
+
     # Get segments from the input file
     segments = get_segments_from_input_service.new(filename: input.filename).call
 
