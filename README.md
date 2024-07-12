@@ -62,8 +62,20 @@ In this section we want to explain the code architecture that was implemented. M
 - Dependency injection.
 - Test driven development (TDD)
 
-Based on the mentioned points, our solution is divided into several layers, achieving our code is reusable, and easy to read, to maintain and to extend.
-The idea is that each piece on our solution does a single action. Also, the code is completely tested using Unit Tests as minimum.
+Taking into account the mentioned points, our solution is divided into several layers, following the principles of clean architecture to build better software reducing coupling and dependencies. With this, we achieve our code is reusable, and easy to read, to maintain and to extend.
+
+Also, the code is completely tested using Unit Tests as minimum.
+
+Therefore, we have the following layers in our application:
+- Adapters:
+  - The main script
+- Application
+  - Use cases
+  - Inputs for each use case
+  - Transformers and serializers
+- Domain
+  - Entities
+  - Services
 
   #TODO: PUT AN IMAGE SHOWING THE ARCHITECTURE
 
@@ -140,7 +152,9 @@ In this section, we can find some improvements for our solution:
 
   For example, we might have the following data model:
 
-  #TODO: PUT AN IMAGE SHOWING THE DATA MOTEL
+  <p align="center">
+    <img alt="DB data model" width="833px" src="./docs/assets/db-data-model.png" />
+  </p>
 
   Once we have the information in a database, we might query the itinerary for a certain user and return it somehow, for example, exposing it in an API endpoint.
 
