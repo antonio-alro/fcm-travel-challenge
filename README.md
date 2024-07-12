@@ -153,7 +153,7 @@ In this section, we can find some improvements for our solution:
   For example, we might have the following data model:
 
   <p align="center">
-    <img alt="DB data model" width="833px" src="./docs/assets/db-data-model.png" />
+    <img alt="DB data model" width="833px" src="./docs/db-data-model.png" />
   </p>
 
   Once we have the information in a database, we might query the itinerary for a certain user and return it somehow, for example, exposing it in an API endpoint.
