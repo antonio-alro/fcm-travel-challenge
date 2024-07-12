@@ -148,7 +148,7 @@ In addition, leveraging the use of dependency injection, we can inject fake clas
 ## Potential improvements
 In this section, we can find some improvements for our solution:
 
-- Data persistence:
+- **Data persistence:**
 
   Assuming that we might receive the input text via webhook or having a periodical process that pulls the data, we might persist the information in a database.
 
@@ -160,7 +160,7 @@ In this section, we can find some improvements for our solution:
 
   Once we have the information in a database, we might query the itinerary for a certain user and return it somehow, for example, exposing it in an API endpoint.
 
-- Parameters validation:
+- **Parameters validation:**
 
   We decide to implement our own validation for the input arguments, due to the validation in this case was very simple. However, we can use some library/gem to include this arguments validation. For example, we might use the gem [dry-validation](https://github.com/dry-rb/dry-validation) and implement some contracts. We can find further details [in their documentation](https://dry-rb.org/gems/dry-validation/1.10/).
 
