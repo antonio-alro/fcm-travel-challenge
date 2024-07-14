@@ -69,10 +69,10 @@ Also, the code is completely tested using Unit Tests as minimum.
 Therefore, we have the following layers in our application:
 - Adapters:
   - The main script
+  - Transformers and serializers
 - Application
   - Use cases
   - Inputs for each use case
-  - Transformers and serializers
 - Domain
   - Entities
   - Services
