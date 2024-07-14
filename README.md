@@ -15,8 +15,8 @@
 - [Project: Getting started](#project-getting-started)
   * [Technologies](#technologies)
   * [How to build the project](#how-to-build-the-project)
-  * [How to run the script](#how-to-run-the-script)
   * [How to run the test suite](#how-to-run-the-test-suite)
+  * [How to run the script](#how-to-run-the-script)
 
 ---
 
