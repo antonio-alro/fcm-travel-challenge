@@ -28,7 +28,7 @@ Within the file [CHALLENGE-EXPLANATION](CHALLENGE-EXPLANATION.md) we can find th
 
 ## Decision making
 
-This solution is built over a Rails API application (although it's not necessary). In addition, we use Docker with a couple of containers: one for the database and one for the backend application.
+This solution is built over a Rails API application (although it's not necessary). In addition, we use Docker with a couple of containers: one for the database (not used, actually) and one for the backend application.
 
 Finally, we include a script in the root of the project (`main.rb`) to be able to run the command just as was said in the challenge explanation. We can find furhter details about its execution in the section [How to run the script](#how-to-run-the-script).
 
@@ -191,19 +191,19 @@ In the same way, we can use the following command to stop the containers and, th
 docker-compose stop
 ```
 
-On the other side, the first time we are using this project, we will need to create the database (Although I know that the database has not been used to solve this challenge):
+On the other side, the first time we are using this project, we will need to create the database (Although we know that the database has not been used to solve this challenge):
 ```bash
 docker-compose run --rm backend-app sh -c "bundle exec rails db:create"
-```
-
-### How to run the script
-As we are using Docker in our app, we will need to run the script `main.rb` through the following command:
-```bash
-docker-compose run --rm backend-app sh -c "BASED=SVQ bundle exec ruby main.rb input.txt"
 ```
 
 ### How to run the test suite
 As we use Rspec for testing, we can run the whole test suite through the following command:
 ```bash
 docker-compose run --rm backend-app sh -c "RAILS_ENV=test bundle exec rspec ./spec/"
+```
+
+### How to run the script
+And last but not least, we can run the script `main.rb` through the following command using Docker:
+```bash
+docker-compose run --rm backend-app sh -c "BASED=SVQ bundle exec ruby main.rb input.txt"
 ```
